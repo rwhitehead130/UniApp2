@@ -18,7 +18,6 @@ function initialize() {
     infowindow = new google.maps.InfoWindow();
     $('#results').hide();
     $('#noresults').hide();
-    loadInitialData();
       // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
