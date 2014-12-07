@@ -71,9 +71,8 @@ var options = {
     mapTypeControlOptions: {
         mapTypeIds: ['UC']
     },
-    center: new google.maps.LatLng(-43.523893, 172.583649),
+    center: new google.maps.LatLng(-43.523719, 172.582785),
     zoom: 15,
     scrollwheel: false,
-    //disableDefaultUI: true,
     mapTypeId: 'UC'
 };

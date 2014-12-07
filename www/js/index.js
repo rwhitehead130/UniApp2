@@ -35,26 +35,9 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		    map = new google.maps.Map(document.getElementById('map'), options);
-    var styledMapType = new google.maps.StyledMapType(styles, {name: 'UC'});
-    map.mapTypes.set('UC', styledMapType);
-    infowindow = new google.maps.InfoWindow();
-    $('#results').hide();
-    $('#noresults').hide();
-      // Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var currentPos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-        var currentPosMarker = new google.maps.Marker({
-            position: currentPos,
-            map: map,
-            icon: baseUrl+'/'+servlet+'/images/current_location.png',
-            title: 'Current Location'
-        });
-    }, function() {
-    });
-  } else {
-  }
+	    map = new google.maps.Map(document.getElementById('map'), options);
+		var styledMapType = new google.maps.StyledMapType(styles, {name: 'UC'});
+		map.mapTypes.set('UC', styledMapType);
         // app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
