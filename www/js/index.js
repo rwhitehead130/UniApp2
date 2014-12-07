@@ -16,8 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
-var map;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -35,20 +34,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-	    map = new google.maps.Map(document.getElementById('map'), options);
-		var styledMapType = new google.maps.StyledMapType(styles, {name: 'UC'});
-		map.mapTypes.set('UC', styledMapType);
-        // app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        google.maps.event.addDomListener(window, 'load', initialize);
     }
 };
