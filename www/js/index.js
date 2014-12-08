@@ -34,7 +34,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		navigator.geolocation.getCurrentPosition(app.onSuccess);
+		navigator.geolocation.getCurrentPosition(app.onSuccess,app.onError);
     }
     
     onSuccess: function(position) {
@@ -56,5 +56,9 @@ var app = {
 		}
 		
 		google.maps.event.addDomListener(window, 'load', initialize);
+	}
+	
+	onError: function(error) {
+		alert(error.message);
 	}
 };
