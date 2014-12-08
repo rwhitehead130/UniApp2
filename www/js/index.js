@@ -36,7 +36,7 @@ var app = {
     onDeviceReady: function() {
 		alert("Test");
 		navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
-    }
+    },
     
     onSuccess: function(position) {
 		  var mapOptions = {
@@ -52,7 +52,7 @@ var app = {
 		      mapOptions);
 		    var styledMapType = new google.maps.StyledMapType(styles, {name: 'UC'});
 		    map.mapTypes.set('UC', styledMapType);
-		}
+		},
 	
 	onError: function(error) {
 		alert(error.message);
