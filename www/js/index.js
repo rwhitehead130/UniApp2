@@ -34,12 +34,10 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		navigator.geolocation.getCurrentPosition(app.onSuccess,app.onError);
+		navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     }
     
     onSuccess: function(position) {
-		var map;
-		function initialize() {
 		  var mapOptions = {
 			  mapTypeControlOptions: {
 		        mapTypeIds: ['UC']
@@ -49,14 +47,11 @@ var app = {
 		    scrollwheel: false,
 		    mapTypeId: 'UC'
 		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'),
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
 		      mapOptions);
 		    var styledMapType = new google.maps.StyledMapType(styles, {name: 'UC'});
 		    map.mapTypes.set('UC', styledMapType);
 		}
-		
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
 	
 	onError: function(error) {
 		alert(error.message);
